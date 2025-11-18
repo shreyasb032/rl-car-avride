@@ -1,0 +1,30 @@
+robot:
+  length:   1.0       # [m]
+  width:    0.6       # [m]
+  max_steer_angle: 0.785  # [rad]
+  max_steer_rate:  3.14   # [rad/s]
+  max_wheel_speed: 1.5    # [m/s]
+  max_wheel_accel: 3.0    # [m/s²]
+
+env:
+  time_step: 0.05   # [s]
+  max_steps: 200
+  goal_tolerance: 0.3   # [m]
+  start_radius: 10.0    # [m]
+
+rl:
+  algorithm: SAC
+  gamma:     0.99
+  lr_actor:  3e-4
+  lr_critic: 3e-4
+  batch_size: 256
+  buffer_size: 1e6
+  train_freq: 1
+  gradient_steps: 1
+
+logging:
+  log_dir:  logs/
+  tensorboard: true
+  wandb:       false
+
+seed: 42
